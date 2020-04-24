@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    link(rel='icon',type='image/png',href='/images/pastie.png')
+    link(rel='shortcut icon',type='image/png',href='/images/pastie.png')
+    title Pastie
+    link#hljsTheme(rel="stylesheet", href=`/css/v/${theme}`)
+    link(rel="stylesheet", href="/css/main.css")
+  body.hljs
+    header
+      .data
+        .item#language
+          = paste.languageName
+        if paste.lineCount > 16
+          .item
+            = paste.lineCount
+            |  lines
+        if paste.kbSize > 1
+          .item
+            | !{paste.kbSizeText}
+        .item
+          = paste.ttlText
+          sup
+            acronymn(title="Time to Live") TTL
+        .item
+          select#themes
+            option hybrid
+        .tools
+          .item
+            a(href=`/p/${paste.key}/raw`) raw
+    section.code
+      pre(class=`lineNumbers`)
+        code(class=`hljs`)
+          //- leave space for the line numbers
+          != paste.lineCount.toString().split("").map((x) => "&nbsp;").join("")
+      pre
+        code(class=`hljs lang-${paste.language}`)
+          //- = JSON.stringify(paste).replace(/,"/g,",\n\"")
+          //- br
+          = paste.content
+    include ../includes/footer.pug
+
+    script(src="/js/highlight.js")
+    script(src="/js/bundle.js")
+    script
+      | app.pasteShow();

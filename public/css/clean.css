@@ -1,0 +1,65 @@
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    background: white;
+    /* color: #DCDCDC */
+}
+
+.hljs-keyword { color:#380;  }
+.hljs-built_in {  color:#c00; color:#A60 }
+.hljs-type { background: gold}
+.hljs-literal { color:#038;  }
+.hljs-number { color:#03D;  }
+.hljs-regexp { color:#909; }
+.hljs-string { color:#D20; }
+.hljs-subst { background: #d202; color: #333; }
+.hljs-symbol { background: gold}
+/* .hljs-class { background: gold} */
+/* .hljs-function { background: gold} */
+
+.hljs-class .hljs-title { color:#B06; font-weight:bold; }
+.hljs-title { color:#06B; xfont-weight: bold; }
+.hljs-params { color:#036; }
+/* Meta */
+.hljs-comment { color: #888; font-style: italic; }
+.hljs-doctag { color:#6aa;  }
+.hljs-doctag .hljs-type { color:#69c; background: inherit; color: #888 }
+.hljs-meta { color:#69c; }
+.hljs-meta-keyword { }
+.hljs-meta-string {}
+/* Tags, attributes, configs */
+.hljs-section { xbackground: gold; font-weight: bold; color:#39c; color: #B06}
+.hljs-tag { background: gold }
+.hljs-name { background: gold }
+.hljs-builtin-name { background: gold  }
+.hljs-attr { background: gold }
+.hljs-attribute { background: gold }
+.hljs-variable { background: goldx; font-weight: bold; }
+/* Markup */
+.hljs-bullet { color: #7ad }
+.hljs-code { xbackground: gold; background: #eee }
+.hljs-emphasis { xbackground: gold; color:#c77; }
+.hljs-strong { background: rgb(255, 240, 153); color:#c00; }
+.hljs-formula { background: gold }
+.hljs-link { xbackground: gold; color: #36c; text-decoration: underline; }
+.hljs-quote { background: gold }
+/* CSS */
+selector-tag
+selector-id
+selector-class
+selector-attr
+selector-pseudo
+/* Templates */
+template-tag
+template-variable
+/* diff */
+.hljs-addition { color:green; background: #D8FCCE; }
+.hljs-deletion { color:#c00; background: #F6D8D8; }
+/* ReasonML */
+operator
+pattern-match
+typing
+constructor
+module-access
+module

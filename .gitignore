@@ -1,3 +1,20 @@
+db/development.sqlite
+
+# build assets
+public/js/bundle.js
+public/js/highlight.js
+public/**/*.br
+public/**/*.gz
+
+# old scratch git repo
+.privategit
+
+# -------
+
+# checkout of JS used for building our highlight.js
+work/highlight.js
+
+
 # Logs
 logs
 *.log

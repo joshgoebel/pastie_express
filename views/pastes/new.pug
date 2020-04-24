@@ -1,0 +1,42 @@
+mixin select(languages, selected)
+  select&attributes(attributes)
+    each name, id in languages
+      option(value=id, selected=(selected==id))= name
+
+doctype html
+html
+  head
+    link(rel='icon',type='image/png',href='/images/pastie.png')
+    link(rel='shortcut icon',type='image/png',href='/images/pastie.png')
+    title Pastie
+    link#hljsTheme(rel="stylesheet", href=`/css/v/${theme}`)
+    link(rel="stylesheet", href="/css/main.css")
+    each item in THEMES
+      if theme != item.file
+        link(rel="prefetch" as="style" href=`/css/v/${item.file}`)
+  body.hljs.editor
+    //- header
+    //-   .data
+    //-     .item
+    //-       | Pastie
+    //-     .item
+    //-       a(href="/") New
+    //-     .item
+    //-       a(href="/m/changelog") Changelog
+
+    section
+      form#frm(method='post',action='/pastes/create')
+        div#toolbar
+          div.langPicker
+            +select(LANGUAGES)(name="language", id="language",tabindex=5)
+          div Expires in 24 hours
+          div
+            button(tabindex=20) Save Paste
+        textarea#editor.hljs(name='content',tabindex=10, placeholder="Please paste your content here...")
+
+
+    include ../includes/footer.pug
+  script(src="/js/highlight.js")
+  script(src="/js/bundle.js")
+  script
+    | app.pasteNew();
