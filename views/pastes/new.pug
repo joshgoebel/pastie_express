@@ -10,9 +10,9 @@ html
     link(rel='shortcut icon',type='image/png',href='/images/pastie.png')
     title Pastie
     link#hljsTheme(rel="stylesheet", href=`/css/v/${theme}`)
-    link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet", href=`${asset("/css/main.css")}`)
     each item in THEMES
-      if theme != item.file
+      if theme != item.file && item.file != ""
         link(rel="prefetch" as="style" href=`/css/v/${item.file}`)
   body.hljs.editor
     //- header
@@ -36,7 +36,7 @@ html
 
 
     include ../includes/footer.pug
-  script(src="/js/highlight.js")
-  script(src="/js/bundle.js")
+  script(src=`${asset("/js/highlight.js")}`)
+  script(src=`${asset("/js/bundle.js")}`)
   script
     | app.pasteNew();

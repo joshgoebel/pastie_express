@@ -37,6 +37,7 @@
     "pug": "^2.0.4",
     "rollup": "^2.7.2",
     "rollup-plugin-commonjs": "^10.1.0",
+    "staticify": "^4.0.0",
     "uuid": "^7.0.3",
     "uuid-base62": "^0.1.0"
   },

@@ -1,4 +1,5 @@
 db/development.sqlite
+.vscode
 
 # build assets
 public/js/bundle.js
