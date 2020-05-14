@@ -7,7 +7,8 @@ app.set('view engine', 'pug');
 
 // server
 const PORT = process.env.PORT || 3000
-app.listen(PORT, () => {
+const BIND_IP = process.env.IP_ADDRESS || '0.0.0.0'
+app.listen(PORT, BIND_IP, () => {
   console.log(`The app is running on ${PORT}.`)
 });
 
