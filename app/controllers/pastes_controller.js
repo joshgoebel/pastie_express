@@ -50,7 +50,7 @@ class PastesController extends Controller {
 
   async create() {
     if (this.params.content.trim() === "") {
-      resp.redirect("/")
+      this.redirect("/")
       return;
     }
 
