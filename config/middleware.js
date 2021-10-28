@@ -1,6 +1,6 @@
 const express = require('express');
 const compression = require('compression')
-const bodyParser = require('body-parser');
+const bodyParser_urlencoded = require('body-parser').urlencoded;
 const cookieParser = require('cookie-parser');
 const expressStaticGzip = require("express-static-gzip");
 const addRequestId = require('express-request-id')({setHeader: false})
@@ -38,7 +38,7 @@ function buildStack(routes) {
   middleware.use(morgan("[:date[iso] #:id] Completed :status :res[content-length] in :response-time ms"))
 
   // param and cookie parsing
-  middleware.use(bodyParser.urlencoded({extended: false}));
+  middleware.use(bodyParser_urlencoded({extended: false}));
   middleware.use(cookieParser());
 
   // const shouldCompress = (req, res) => { return req.path.slice(0,3) === '/p/' }
